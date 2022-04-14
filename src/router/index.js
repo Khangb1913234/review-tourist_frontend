@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Destination from "@/views/Destination.vue";
+import Collaborator from "@/views/Collaborator.vue"
 
 const routes = [
     {
@@ -23,6 +24,11 @@ const routes = [
         name: "destination.add",
         component: () => import("@/views/DestinationAdd.vue"),
         props: true // Truyền các biến trong $route.params vào làm props
+    },
+    {
+        path: "/collaborator",
+        name: "collaborator",
+        component: Collaborator,
     },
 ];
 
