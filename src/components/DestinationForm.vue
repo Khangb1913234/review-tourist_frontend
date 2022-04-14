@@ -14,7 +14,7 @@
             <ErrorMessage name="name" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="location">Location</label>
+            <label for="location">Vị trí</label>
             <Field
                 name="location"
                 type="location"
@@ -34,7 +34,7 @@
             <ErrorMessage name="description" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="image">Ảnh</label>
+            <label for="image">Link ảnh</label>
             <Field
                 name="image"
                 type="tel"
@@ -66,6 +66,11 @@
             >
                 Xóa
             </button>
+        </div>
+        <div>
+            <router-link to="/">
+                <button class="btn btn-primary">Trở lại</button>
+            </router-link>
         </div>
     </Form>
 </template>

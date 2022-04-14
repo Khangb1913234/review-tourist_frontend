@@ -8,6 +8,12 @@
                     <i class="fas fa-map"></i>
                 </router-link>
             </li>
+            <li class="nav-item">
+                <router-link to="/collaborator" class="nav-link">
+                    Quản lý cộng tác viên
+                    <i class="fas fa-person"></i>
+                </router-link>
+            </li>
         </div>
     </nav>
 </template>

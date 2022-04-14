@@ -14,7 +14,7 @@
             <ErrorMessage name="name" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address">Địa chỉ</label>
             <Field
                 name="address"
                 type="text"
@@ -24,7 +24,7 @@
             <ErrorMessage name="address" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">SDT</label>
             <Field
                 name="phone"
                 type="text"
@@ -54,6 +54,12 @@
             >
                 Xóa
             </button>
+        </div>
+        <div>
+            <router-link to="/collaborator">
+                <button class="btn btn-primary">Trở lại</button>
+            </router-link>
+            
         </div>
     </Form>
 </template>

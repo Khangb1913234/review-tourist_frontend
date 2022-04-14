@@ -1,6 +1,6 @@
 <template>
     <div v-if="collaborator" class="page">
-        <h4>Hiệu chỉnh địa điểm</h4>
+        <h4>Hiệu chỉnh cộng tác viên</h4>
         <CollaboratorForm
             :collaborator="collaborator"
             @submit:collaborator="updateCollaborator"
