@@ -13,7 +13,7 @@ export default {
             {{ collaborator.name }}
         </div>
         <div class="p-1">
-            <strong>Vị trí:</strong>
+            <strong>Địa chỉ:</strong>
             {{ collaborator.address }}
         </div>
         <div class="p-1">
@@ -26,10 +26,3 @@ export default {
         </div>
     </div>
 </template>
-
-<style scoped>
-.imgdes {
-    width: 800px;
-    height: 680px;
-}
-</style>

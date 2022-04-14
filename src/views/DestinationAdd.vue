@@ -28,7 +28,7 @@ export default {
         async createDestination(data) {
             try {
                 await DestinationService.create(data);
-                this.message = "Liên hệ được thêm thành công.";
+                this.message = "Địa điểm được thêm thành công.";
             } catch (error) {
                 console.log(error);
             }

@@ -30,6 +30,18 @@ const routes = [
         name: "collaborator",
         component: Collaborator,
     },
+    {
+        path: "/collaborator/:id",
+        name: "collaborator.edit",
+        component: () => import("@/views/CollaboratorEdit.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
+    {
+        path: "/collaborator/add",
+        name: "collaborator.add",
+        component: () => import("@/views/CollaboratorAdd.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
 ];
 
 const router = createRouter({

@@ -41,7 +41,7 @@
                 <CollaboratorDetail :collaborator="activeCollaborator" />
                 <router-link
                     :to="{
-                        name: 'destination.edit',
+                        name: 'collaborator.edit',
                         params: { id: activeCollaborator.id },
                     }"
                 >
@@ -84,8 +84,8 @@ export default {
         // Chuyển các đối tượng collaborator thành chuỗi để tiện cho tìm kiếm.
         collaboratorStrings() {
             return this.collaborators.map((collaborator) => {
-                const { name, location, description, image } = collaborator;
-                return [name, location, description, image].join("");
+                const { name, address, phone, website } = collaborator;
+                return [name, address, phone, website].join("");
             });
         },
         // Trả về các collaborator có chứa thông tin cần tìm kiếm.
@@ -129,7 +129,7 @@ export default {
         },
 
         goToAddCollaborator() {
-            this.$router.push({ name: "destination.add" });
+            this.$router.push({ name: "collaborator.add" });
         },
     },
     mounted() {
