@@ -12,6 +12,18 @@ const routes = [
         name: "notfound",
         component: () => import("@/views/NotFound.vue"),
     },
+    {
+        path: "/destination/:id",
+        name: "destination.edit",
+        component: () => import("@/views/DestinationEdit.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
+    {
+        path: "/destination/add",
+        name: "destination.add",
+        component: () => import("@/views/DestinationAdd.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
 ];
 
 const router = createRouter({

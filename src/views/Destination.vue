@@ -5,12 +5,12 @@
         </div>
         <div class="mt-3 col-md-6">
             <h4>
-                Giới thiệu địa điểm du lịch
-                <i class="fas fa-address-book"></i>
+                Địa điểm du lịch
+                <i class="fas fa-map"></i>
             </h4>
             <DestinationList
-                v-if="filteredContactsCount > 0"
-                :contacts="filteredContacts"
+                v-if="filteredDestinationsCount > 0"
+                :destinations="filteredDestinations"
                 v-model:activeIndex="activeIndex"
             />
             <p v-else>Không có địa điểm nào.</p>
@@ -20,29 +20,29 @@
                     <i class="fas fa-redo"></i> Làm mới
                 </button>
 
-                <button class="btn btn-sm btn-success" @click="goToAddContact">
+                <button class="btn btn-sm btn-success" @click="goToAddDestination">
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
 
                 <button
                     class="btn btn-sm btn-danger"
-                    @click="removeAllContacts"
+                    @click="removeAllDestinations"
                 >
                     <i class="fas fa-trash"></i> Xóa tất cả
                 </button>
             </div>
         </div>
         <div class="mt-3 col-md-6">
-            <div v-if="activeContact">
+            <div v-if="activeDestination">
                 <h4>
-                    Chi tiết Liên hệ
-                    <i class="fas fa-address-card"></i>
+                    Thông tin về địa điểm
+                    <i class="fas fa-map"></i>
                 </h4>
-                <DestinationDetail :contact="activeContact" />
+                <DestinationDetail :destination="activeDestination" />
                 <router-link
                     :to="{
-                        name: 'contact.edit',
-                        params: { id: activeContact.id },
+                        name: 'destination.edit',
+                        params: { id: activeDestination.id },
                     }"
                 >
                     <span class="mt-2 badge badge-warning">
@@ -68,7 +68,7 @@ export default {
     },
     data() {
         return {
-            contacts: [],
+            destinations: [],
             activeIndex: -1,
             searchText: "",
         };
@@ -81,43 +81,43 @@ export default {
         },
     },
     computed: {
-        // Chuyển các đối tượng contact thành chuỗi để tiện cho tìm kiếm.
-        contactStrings() {
-            return this.contacts.map((contact) => {
-                const { name, location, description, image } = contact;
+        // Chuyển các đối tượng destination thành chuỗi để tiện cho tìm kiếm.
+        destinationStrings() {
+            return this.destinations.map((destination) => {
+                const { name, location, description, image } = destination;
                 return [name, location, description, image].join("");
             });
         },
-        // Trả về các contact có chứa thông tin cần tìm kiếm.
-        filteredContacts() {
-            if (!this.searchText) return this.contacts;
-            return this.contacts.filter((contact, index) =>
-                this.contactStrings[index].includes(this.searchText)
+        // Trả về các destination có chứa thông tin cần tìm kiếm.
+        filteredDestinations() {
+            if (!this.searchText) return this.destinations;
+            return this.destinations.filter((destination, index) =>
+                this.destinationStrings[index].includes(this.searchText)
             );
         },
-        activeContact() {
+        activeDestination() {
             if (this.activeIndex < 0) return null;
-            return this.filteredContacts[this.activeIndex];
+            return this.filteredDestinations[this.activeIndex];
         },
-        filteredContactsCount() {
-            return this.filteredContacts.length;
+        filteredDestinationsCount() {
+            return this.filteredDestinations.length;
         },
     },
     methods: {
-        async retrieveContacts() {
+        async retrieveDestinations() {
             try {
-                this.contacts = await DestinationService.getAll();
+                this.destinations = await DestinationService.getAll();
             } catch (error) {
                 console.log(error);
             }
         },
 
         refreshList() {
-            this.retrieveContacts();
+            this.retrieveDestinations();
             this.activeIndex = -1;
         },
 
-        async removeAllContacts() {
+        async removeAllDestinations() {
             if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
                 try {
                     await DestinationService.deleteAll();
@@ -128,8 +128,8 @@ export default {
             }
         },
 
-        goToAddContact() {
-            this.$router.push({ name: "contact.add" });
+        goToAddDestination() {
+            this.$router.push({ name: "destination.add" });
         },
     },
     mounted() {
@@ -141,6 +141,7 @@ export default {
 <style scoped>
 .page {
     text-align: left;
-    max-width: 750px;
+    max-width:750px;
 }
+
 </style>
