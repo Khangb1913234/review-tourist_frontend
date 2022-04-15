@@ -1,6 +1,6 @@
 <template>
     <div v-if="destination" class="page">
-        <h4>Hiệu chỉnh Liên hệ</h4>
+        <h4>Thêm địa điểm</h4>
         <DestinationForm
             :destination="destination"
             @submit:destination="createDestination"
