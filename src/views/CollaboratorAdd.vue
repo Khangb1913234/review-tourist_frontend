@@ -1,6 +1,6 @@
 <template>
     <div v-if="collaborator" class="page">
-        <h4>Hiệu chỉnh Liên hệ</h4>
+        <h4>Thêm Cộng tác viên</h4>
         <CollaboratorForm
             :collaborator="collaborator"
             @submit:collaborator="createCollaborator"
