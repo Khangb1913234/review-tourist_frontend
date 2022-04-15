@@ -17,12 +17,12 @@ export default {
             {{ collaborator.address }}
         </div>
         <div class="p-1">
-            <strong>Mô tả:</strong>
+            <strong>SDT:</strong>
             {{ collaborator.phone }}
         </div>
         <div class="p-1">
-            <strong>Website:</strong>
-            {{ collaborator.website }}
+            <strong>Website: </strong>
+            <a :href="collaborator.website" target="blank" style="text-decoration:none;">{{ collaborator.website }}</a>
         </div>
     </div>
 </template>
