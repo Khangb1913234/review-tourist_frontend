@@ -24,6 +24,14 @@ export default {
             {{ destination.description }}
         </div>
         <div class="p-1">
+            <strong>Cộng tác viên:</strong>
+            {{ destination.collaborator_tour }}
+            <router-link to="/collaborator">
+                    <button class="btn-primary">Tìm cộng tác viên <i class="fas fa-person"></i></button>
+                    
+            </router-link>
+        </div>
+        <div class="p-1">
             <strong>Địa điểm nổi bật:&nbsp;</strong>
             <i v-if="destination.trend" class="fas fa-check"></i>
             <i v-else class="fas fa-times"></i>

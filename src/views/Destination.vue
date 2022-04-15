@@ -84,8 +84,8 @@ export default {
         // Chuyển các đối tượng destination thành chuỗi để tiện cho tìm kiếm.
         destinationStrings() {
             return this.destinations.map((destination) => {
-                const { name, location, description, image } = destination;
-                return [name, location, description, image].join("");
+                const { name, location, description, collaborator_tour, image } = destination;
+                return [name, location, description, collaborator_tour, image].join("");
             });
         },
         // Trả về các destination có chứa thông tin cần tìm kiếm.

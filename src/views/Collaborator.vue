@@ -6,7 +6,7 @@
         <div class="mt-3 col-md-6">
             <h4>
                 Cộng tác viên
-                <i class="fas fa-map"></i>
+                <i class="fas fa-person"></i>
             </h4>
             <CollaboratorList
                 v-if="filteredCollaboratorsCount > 0"
@@ -36,7 +36,7 @@
             <div v-if="activeCollaborator">
                 <h4>
                     Thông tin về cộng tác viên
-                    <i class="fas fa-map"></i>
+                    <i class="fas fa-person"></i>
                 </h4>
                 <CollaboratorDetail :collaborator="activeCollaborator" />
                 <router-link

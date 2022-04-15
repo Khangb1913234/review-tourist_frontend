@@ -10,7 +10,7 @@
             </li>
             <li class="nav-item">
                 <router-link to="/collaborator" class="nav-link">
-                    Quản lý cộng tác viên
+                    Cộng tác viên
                     <i class="fas fa-person"></i>
                 </router-link>
             </li>
