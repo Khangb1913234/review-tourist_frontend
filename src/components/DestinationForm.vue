@@ -105,7 +105,7 @@ export default {
                 .string()
                 .required("Mô tả phải có giá trị.")
                 .min(2, "Mô tả phải ít nhất 20 ký tự.")
-                .max(100, "Mô tả có nhiều nhất 500 ký tự."),
+                .max(1000, "Mô tả có nhiều nhất 1000 ký tự."),
             image: yup
                 .string()
                 .required("Ảnh phải có giá trị(đường link ảnh).")
