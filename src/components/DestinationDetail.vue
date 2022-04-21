@@ -3,25 +3,6 @@ export default {
     props: {
         destination: { type: Object, required: true },
     },
-    methods: {
-        myFunction() {
-            /* Get the text field */
-            var card = document.getElementById("myInput");
-
-            var copyText = card.innerHTML;
-
-            console.log("Đây là"+copyText)
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-            /* Copy the text inside the text field */
-            navigator.clipboard.writeText(copyText.value);
-
-            /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
-        }
-    }
 };
 </script>
 
@@ -59,7 +40,7 @@ export default {
 
 <style scoped>
 .imgdes {
-    width: 500px;
-    height: 400px;
+    width: 1000px;
+    height: 700px;
 }
 </style>

@@ -16,20 +16,34 @@ export default {
 <template>
     <div>
         <div
-            class="a"
+            class="item"
             v-for="(destination, index) in destinations"
             :key="destination.id"
             :class="{ active: index === activeIndex }"
             @click="select(index)"
         >
             <img :src="destination.image" class="img"/>
+            <div style="font-size: 20px; font-weight: bold;">{{ destination.name }}</div>
         </div>
     </div>
 </template>
 
-<style>
+<style scoped>
 .img {
-    width: 300px;
+    width: 270px;
     height: 200px;
+}
+
+.item {
+    float: left;
+    width: 33.33333%;
+    margin: 16px -8px 48px -8px;
+}
+.item :hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.item:hover div {
+    color: red;
 }
 </style>

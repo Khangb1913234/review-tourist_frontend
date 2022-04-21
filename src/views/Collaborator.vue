@@ -46,7 +46,7 @@
                     }"
                 >
                     <button class="btn btn-sm btn-warning">
-                        <i class="fas fa-edit"></i> Cập nhật
+                        <i class="fas fa-edit"></i> Cập nhật / Xóa
                     </button>
                 </router-link>
             </div>
@@ -118,7 +118,7 @@ export default {
         },
 
         async removeAllCollaborators() {
-            if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
+            if (confirm("Bạn muốn xóa tất cả cộng tác viên?")) {
                 try {
                     await CollaboratorService.deleteAll();
                     this.refreshList();

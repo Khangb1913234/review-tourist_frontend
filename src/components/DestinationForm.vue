@@ -78,9 +78,7 @@
             </button>
         </div>
         <div>
-            <router-link to="/">
-                <button class="btn btn-primary">Trở lại</button>
-            </router-link>
+            <button @click="$router.back()" class="btn btn-primary">Trở lại</button>
         </div>
     </Form>
 </template>

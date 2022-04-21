@@ -14,6 +14,12 @@ const routes = [
         component: () => import("@/views/NotFound.vue"),
     },
     {
+        path: "/destination/info/:id",
+        name: "destination.info",
+        component: () => import("@/views/DestinationInfo.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
+    {
         path: "/destination/:id",
         name: "destination.edit",
         component: () => import("@/views/DestinationEdit.vue"),
