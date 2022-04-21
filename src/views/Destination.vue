@@ -3,7 +3,7 @@
         <div class="col-md-10">
             <InputSearch v-model="searchText" />
         </div>
-        <div class="mt-3 col-md-6">
+        <div class="mt-3 col-md-5">
             <h4>
                 Địa điểm du lịch
                 <i class="fas fa-map"></i>
@@ -32,7 +32,7 @@
                 </button>
             </div>
         </div>
-        <div class="mt-3 col-md-6">
+        <div class="mt-3 col-md-7">
             <div v-if="activeDestination">
                 <h4>
                     Thông tin về địa điểm
@@ -45,9 +45,9 @@
                         params: { id: activeDestination.id },
                     }"
                 >
-                    <span class="mt-2 badge badge-warning">
-                        <i class="fas fa-edit"></i> Hiệu chỉnh</span
-                    >
+                    <button class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i> Cập nhật
+                    </button>
                 </router-link>
             </div>
         </div>
@@ -141,7 +141,7 @@ export default {
 <style scoped>
 .page {
     text-align: left;
-    max-width:750px;
+    max-width:970px;
 }
 
 </style>

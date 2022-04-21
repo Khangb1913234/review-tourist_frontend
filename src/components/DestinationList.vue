@@ -14,15 +14,22 @@ export default {
 </script>
 
 <template>
-    <ul class="list-group">
-        <li
-            class="list-group-item"
+    <div>
+        <div
+            class="a"
             v-for="(destination, index) in destinations"
             :key="destination.id"
             :class="{ active: index === activeIndex }"
             @click="select(index)"
         >
-            {{ destination.name }}
-        </li>
-    </ul>
+            <img :src="destination.image" class="img"/>
+        </div>
+    </div>
 </template>
+
+<style>
+.img {
+    width: 300px;
+    height: 200px;
+}
+</style>

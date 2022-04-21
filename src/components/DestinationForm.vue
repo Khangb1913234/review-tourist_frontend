@@ -17,7 +17,7 @@
             <label for="location">Vị trí</label>
             <Field
                 name="location"
-                type="location"
+                type="text"
                 class="form-control"
                 v-model="destinationLocal.location"
             />
@@ -34,10 +34,20 @@
             <ErrorMessage name="description" class="error-feedback" />
         </div>
         <div class="form-group">
+            <label for="collaborator_tour">Cộng tác viên</label>
+            <Field
+                name="collaborator_tour"
+                type="text"
+                class="form-control"
+                v-model="destinationLocal.collaborator_tour"
+            />
+            <ErrorMessage name="collaborator_tour" class="error-feedback" />
+        </div>
+        <div class="form-group">
             <label for="image">Link ảnh</label>
             <Field
                 name="image"
-                type="tel"
+                type="text"
                 class="form-control"
                 v-model="destinationLocal.image"
             />
@@ -95,17 +105,22 @@ export default {
                 .string()
                 .required("Tên phải có giá trị.")
                 .min(2, "Tên phải ít nhất 2 ký tự.")
-                .max(100, "Tên có nhiều nhất 100 ký tự."),
+                .max(200, "Tên có nhiều nhất 200 ký tự."),
             location: yup
                 .string()
                 .required("Vị trí phải có giá trị.")
                 .min(2, "Vị trí phải ít nhất 2 ký tự.")
-                .max(100, "Vị trí có nhiều nhất 100 ký tự."),
+                .max(200, "Vị trí có nhiều nhất 200 ký tự."),
             description: yup
                 .string()
                 .required("Mô tả phải có giá trị.")
                 .min(2, "Mô tả phải ít nhất 20 ký tự.")
                 .max(1000, "Mô tả có nhiều nhất 1000 ký tự."),
+            collaborator_tour: yup
+                .string()
+                .required("Cộng tác viên phải có giá trị.")
+                .min(2, "Cộng tác viên phải ít nhất 2 ký tự.")
+                .max(200, "Cộng tác viên có nhiều nhất 200 ký tự."),
             image: yup
                 .string()
                 .required("Ảnh phải có giá trị(đường link ảnh).")

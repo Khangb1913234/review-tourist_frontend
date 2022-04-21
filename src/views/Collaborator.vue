@@ -45,9 +45,9 @@
                         params: { id: activeCollaborator.id },
                     }"
                 >
-                    <span class="mt-2 badge badge-warning">
-                        <i class="fas fa-edit"></i> Hiệu chỉnh</span
-                    >
+                    <button class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i> Cập nhật
+                    </button>
                 </router-link>
             </div>
         </div>

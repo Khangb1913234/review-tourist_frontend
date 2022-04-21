@@ -37,7 +37,7 @@
             <label for="website">Website</label>
             <Field
                 name="website"
-                type="tel"
+                type="text"
                 class="form-control"
                 v-model="collaboratorLocal.website"
             />
@@ -93,7 +93,7 @@ export default {
             phone: yup
                 .string()
                 .matches(
-                    /((09|03|07|08|05)+([0-9]{8})\b)/g,
+                    /((09|03|07|08|05|02)+([0-9]{8})\b)/g,
                     "Số điện thoại không hợp lệ."
                 ),
             website: yup
