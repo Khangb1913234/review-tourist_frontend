@@ -7,18 +7,18 @@
             <h4>
                 Địa điểm du lịch
                 <i class="fas fa-map"></i>
-                <span v-if="activeDestination" style="margin-left: 5px;">
+                <span v-if="activeDestination" style="margin-left: 50px; position: fixed;">
                     <router-link
                         :to="{
                             name: 'destination.info',
                             params: { id: activeDestination.id },
                         }"
                     >
-                        <button class="btn btn-primary">Xem chi tiết</button>
+                        <button class="btn btn-sm btn-primary" style="width: 80px">Xem chi tiết</button>
                     </router-link>
                 </span>
             </h4>   
-            <div>
+            <div style="margin-top: 30px;">
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i> Làm mới
                 </button>
@@ -41,6 +41,7 @@
             <p v-else>Không có địa điểm nào.</p>
         </div>
     </div>
+
 </template>
 
 <script>

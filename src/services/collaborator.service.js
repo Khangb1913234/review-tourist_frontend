@@ -1,8 +1,8 @@
-import createApiClient from "./api.service";
+import { createApiClient } from "./api.service";
 
 class CollaboratorService {
     constructor(baseUrl = "/api/collaborator") {
-        this.api = createApiClient(baseUrl);
+        this.api = createApiClient(baseUrl, true);
     }
     async getAll() {
         return (await this.api.get("/")).data;
