@@ -23,7 +23,6 @@ export const createApiClient = (baseURL, withAuthToken = false) => {
 			if (user && user.accessToken) {
 				config.headers.authorization = `Bearer ${user.accessToken}`;
 			}
-			console.log(config.headers.authorization);
 			return config;
 		});
 
@@ -41,8 +40,6 @@ export const createApiClient = (baseURL, withAuthToken = false) => {
 			}
 		);
 	}
-	else
-		console.log(123)
 
 	return api;
 };
